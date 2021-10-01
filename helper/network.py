@@ -8,7 +8,7 @@ class Net(nn.Module):
         self.inputsize = input_size
         self.func = nn.ModuleList()
 
-
+        # define layers based on the setting
         for n in range(len(n_neurons) - 1):
             n_0 = n_neurons[n]
             n_1 = n_neurons[n + 1]
@@ -16,6 +16,7 @@ class Net(nn.Module):
             self.func.append(nn.ReLU())
             self.func.append(nn.Dropout(drate))
 
+        # define the last fc layer
         self.func.append(nn.Linear(n_1, n_cats, bias=True))
 
     def forward(self, x):

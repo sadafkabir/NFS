@@ -59,9 +59,9 @@ def compute_grad(net, epoch, dl, optimizer, batch_size):
 
     x = np.arange(0, dl.n_features)
     normalized_grad = total_grad / total_grad.sum()
-    # print(normalized_grad)
-    # sorted_grad = np.argsort(normalized_grad)
-    # print(sorted_grad)
+    print(normalized_grad)
+    sorted_grad = np.argsort(normalized_grad)
+    print(sorted_grad)
     # plt.bar(x, normalized_grad)
     # plt.xticks(x)
     # plt.show()
