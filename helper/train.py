@@ -2,6 +2,7 @@ import torch.nn as nn
 import torch
 import numpy as np
 from torch.autograd import Variable
+import matplotlib.pyplot as plt
 
 def train(net, epoch, dl, optimizer, batch_size, display):
     net.train()
@@ -58,11 +59,15 @@ def compute_grad(net, epoch, dl, optimizer, batch_size):
         total_grad += np.abs(grad_np).mean(0)
 
     x = np.arange(0, dl.n_features)
+    x = x+1
     normalized_grad = total_grad / total_grad.sum()
     print(normalized_grad)
     sorted_grad = np.argsort(normalized_grad)
     print(sorted_grad)
-    # plt.bar(x, normalized_grad)
-    # plt.xticks(x)
-    # plt.show()
+    plt.bar(x, normalized_grad)
+    plt.xticks(x)
+    plt.title('Dermatology Dataset')
+    plt.xlabel('Feature')
+    plt.ylabel('Normalized Importance Score')
+    plt.show()
     return normalized_grad

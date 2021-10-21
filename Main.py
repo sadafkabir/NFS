@@ -12,7 +12,7 @@ def main(n_neurons, batch_size, drate, fold, display=False, seed=123):
     # construct the model
     torch.random.manual_seed(seed)
     np.random.seed(seed)
-    dl = Dataloader(file_address='./statlog.mat', batch_size=batch_size, selected_fold=fold)
+    dl = Dataloader(file_address='./dermatology.mat', batch_size=batch_size, selected_fold=fold)
 
     n_features = dl.n_features
     n_neurons[0] = n_features
@@ -23,11 +23,8 @@ def main(n_neurons, batch_size, drate, fold, display=False, seed=123):
 
     # define optimizer
     optimizer = optim.Adam(ae.parameters(), lr=1e-3, weight_decay=0e-5)
-    # optimizer = optim.SGD(ae.parameters(), lr=1e-2, weight_decay=4e-5, momentum=0.9)
-    # optimizer = optim.RMSprop(ae.parameters(), lr=1e-3)
     train_epoch = 1000
 
-    # print(ae)
     best_acc = 0
     for epoch in range(train_epoch):
         train(ae, epoch, dl, optimizer, batch_size, display=display)
@@ -43,10 +40,9 @@ def main(n_neurons, batch_size, drate, fold, display=False, seed=123):
 
 
 if __name__ == "__main__":
-    missing_perc = 0.1
-    n_neurons = [13, 13]
+    n_neurons = [30, 30]
 
     batch_size = 32
     display_steps = 100
-    main(n_neurons, batch_size, drate=0.0, fold=0, display=True)
+    main(n_neurons, batch_size, drate=0.6, fold=0, display=True)
 

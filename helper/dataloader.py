@@ -4,19 +4,11 @@ import numpy as np
 from scipy.io import loadmat
 from sklearn.model_selection import KFold
 
-# wdbc
-# features = np.arange(1,31)
-# # features =[2,6,7,14,16,24,27,28]
+#dermatology
+features = np.arange(1,34)
+# features = [1]
 # print(features)
-# y_index = 0
-
-
-# statlog
-features = np.arange(0,13)
-# features = [1,2,9,10,11,12]
-print(features)
-y_index = 13
-
+y_index = 0
 
 class Dataloader:
     def __init__(self, file_address, batch_size=32, train_mean=None, train_std=None,
