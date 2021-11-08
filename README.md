@@ -7,6 +7,8 @@ feature with respect to the outcome (here disease diagnosis). The magnitude of t
 of features. Features will be sorted based on their significance scores. Then, we start removing features with the 
 lowest scores one at a time and repeat the experiment using the remained features. 
 
+![](https://github.com/sadafkabir/NFS/blob/master/helper/Figure_1.png)
+
 Results are shown in the two following figures. Figure 1 demonstrates the significance score of features. As we
 can observe from this figure, feature #9 has the least score and be removed first. Then, feature #10 is the 
 second least important feature and will be removed after feature #9. 
@@ -15,3 +17,4 @@ disease classification accuracy after removing each features. Results show that,
 effectively improves the accuracy while reducing the number of features. 
 Best results is obtained with only 9 features out of original 33 features. We successfully identified the most
 important features for the dermatology dataset and removed 25 unnecessary features.__
+
