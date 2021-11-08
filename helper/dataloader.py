@@ -6,8 +6,6 @@ from sklearn.model_selection import KFold
 
 #dermatology
 features = np.arange(1,34)
-# features = [1]
-# print(features)
 y_index = 0
 
 class Dataloader:
