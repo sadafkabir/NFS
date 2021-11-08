@@ -18,3 +18,4 @@ effectively improves the accuracy while reducing the number of features.
 Best results is obtained with only 9 features out of original 33 features. We successfully identified the most
 important features for the dermatology dataset and removed 25 unnecessary features.__
 
+![](https://github.com/sadafkabir/NFS/blob/master/helper/Figure_2.png)
